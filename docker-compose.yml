@@ -1,0 +1,21 @@
+# Etherpad with MariaDB
+#
+# Access via "http://localhost:9001"
+#   (or "http://$(docker-machine ip):9001" if using docker-machine)
+version: '2'
+services:
+  etherpad:
+    build: .
+    restart: always
+    ports:
+      - 9001:9001
+    links:
+      - database:database
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'etherpad'
+      MYSQL_USER: 'etherpad'
+      MYSQL_PASSWORD: 'oi285trk'
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
