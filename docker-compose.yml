@@ -16,6 +16,6 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: 'etherpad'
-      MYSQL_USER: 'etherpad'
-      MYSQL_PASSWORD: 'oi285trk'
+      MYSQL_USER: 'database_user'
+      MYSQL_PASSWORD: 'password'
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'

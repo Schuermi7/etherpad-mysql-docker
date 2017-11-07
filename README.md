@@ -1,10 +1,8 @@
 etherpad-docker
 ===============
 
-This is a Docker image which is nothing more than the basic test Etherpad setup as described on https://github.com/ether/etherpad-lite.
-(All of these instructions are as root.) To download the image from the Docker index, run:
-
-`docker pull leibnitius/etherpad-docker`
+This is a docker-compose File which you can use to deploy your own Etherpad-Lite https://github.com/ether/etherpad-lite.
+(All of these instructions are made as root.)
 
 To run Etherpad on port 9001, run:
 
@@ -16,10 +14,8 @@ To run Etherpad on port 80, run:
 
 To edit the Etherpad settings.json, it is necessary to clone the Git repository:
 
-`git clone git://github.com/ether/etherpad-docker.git && cd etherpad-docker`
+`git clone git://github.com/Schuermi7/etherpad-mysql-docker.git && cd etherpad-mysql-docker`
 
-Then edit the settings.json to your liking and run:
+Then edit the settings.json to your liking, change your Database settings in the docker-compose.yml und run:
 
-`docker build -t <YOUR_USERNAME>/etherpad-docker .`
-
-This image could also be used as a base for Docker Etherpad images integrated with MySQL, etc.
+`docker-compose up` or `docker-compose up -d` to start it detached.
